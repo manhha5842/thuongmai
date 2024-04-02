@@ -574,7 +574,7 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
         return $ID;
     }
 
-    public function getConnectButton($buttonStyle = 'default', $redirectTo = null, $trackerData = false, $labelType = 'login') {
+    public function getConnectButton($buttonStyle = 'default', $redirectTo = null, $trackerData = false, $labelType = 'login', $customLabel = false) {
         $arg = array();
         if (!empty($redirectTo)) {
             $arg['redirect'] = urlencode($redirectTo);
@@ -593,10 +593,14 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
 
         }
 
-        $label                  = $this->settings->get('login_label');
-        $useCustomRegisterLabel = NextendSocialLogin::$settings->get('custom_register_label');
-        if ($labelType == 'register' && $useCustomRegisterLabel) {
-            $label = $this->settings->get('register_label');;
+        if ($customLabel) {
+            $label = str_replace('{{providerName}}', $this->getLabel(), $customLabel);
+        } else {
+            $label                  = $this->settings->get('login_label');
+            $useCustomRegisterLabel = NextendSocialLogin::$settings->get('custom_register_label');
+            if ($labelType == 'register' && $useCustomRegisterLabel) {
+                $label = $this->settings->get('register_label');
+            }
         }
 
         switch ($buttonStyle) {
@@ -788,11 +792,11 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
     public function liveConnectRedirect() {
         if (!empty($_GET['trackerdata']) && !empty($_GET['trackerdata_hash'])) {
             if (wp_hash($_GET['trackerdata']) === $_GET['trackerdata_hash']) {
-                Persistent::set('trackerdata', $_GET['trackerdata']);
+                Persistent::set('trackerdata', sanitize_text_field($_GET['trackerdata']));
             }
         }
         if (!empty($_GET['redirect'])) {
-            Persistent::set('redirect', $_GET['redirect']);
+            Persistent::set('redirect', sanitize_url($_GET['redirect']));
         }
     }
 

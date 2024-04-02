@@ -1,15 +1,16 @@
 === YITH WooCommerce Wishlist ===
 
 Contributors: yithemes
-Tags: wishlist, woocommerce, products, yit, e-commerce, shop, ecommerce wishlist, yith, woocommerce wishlist, shop wishlist
-Requires at least: 6.0
-Tested up to: 6.2
-Stable tag: 3.21.0
+Tags: woocommerce wishlist, yith woocommerce wishlist, yith wishlist, woocommerce add to wishlist, wishlist for woocommerce
+Requires at least: 6.3
+Tested up to: 6.5
+Stable tag: 3.31.0
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 YITH WooCommerce Wishlist add all Wishlist features to your website. Needs WooCommerce to work.
-WooCommerce 7.7.x compatible.
+WooCommerce 8.7.x compatible.
 
 == Description ==
 
@@ -112,6 +113,66 @@ Yes, of course you can. To avoid Wishlist page to show product prices, you can h
 
 
 == Changelog ==
+
+= 3.31.0 - Released on 13 March 2024 =
+
+* New: support for WordPress 6.5
+* New: support for WooCommerce 8.7
+* Update: YITH plugin framework
+
+= 3.30.0 - Released on 20 February 2024 =
+
+* New: support for WooCommerce 8.6
+* Update: YITH plugin framework
+* Dev: added new filter yith_wcwl_min_item_quantity
+
+= 3.29.0 - Released on 16 January 2024 =
+
+* New: support for WooCommerce 8.5
+* Update: YITH plugin framework
+
+= 3.28.0 - Released on 20 December 2023 =
+
+* New: support for WooCommerce 8.4
+* Update: YITH plugin framework
+
+= 3.27.0 - Released on 14 November 2023 =
+
+* New: support for WordPress 6.4
+* New: support for WooCommerce 8.3
+* Update: YITH plugin framework
+
+= 3.26.0 - Released on 10 October 2023 =
+
+* New: support for WooCommerce 8.2
+* Update: YITH plugin framework
+
+= 3.25.0 - Released on 13 September 2023 =
+
+* New: support for WooCommerce 8.1
+* Update: YITH plugin framework
+* Fix: check on Loop Settings before appending ATW button to Products Grid blocks
+* Fix: prevent warning when using "Use Shortcode" position for ATW and showing WooCommerce product blocks
+
+= 3.24.0 - Released on 2 August 2023 =
+
+* New: support for WordPress 6.3
+* New: support for WooCommerce 8.0
+* New: support for WooCommerce block templates
+* Update: YITH plugin framework
+
+= 3.23.0 - Released on 06 July 2023 =
+
+* New: support for WooCommerce 7.9
+* New: plugin panel UI
+* Update: YITH plugin framework
+* Dev: added HPOS support
+* Dev: minor changes
+
+= 3.22.0 - Released on 13 June 2023 =
+
+* New: support for WooCommerce 7.8
+* Update: YITH plugin framework
 
 = 3.21.0 - Released on 16 May 2023 =
 
